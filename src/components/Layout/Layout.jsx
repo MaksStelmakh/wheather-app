@@ -1,12 +1,10 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "../Header";
 
 const Layout = () => {
   return (
     <>
-      <div>
-        <NavLink to="/">Today</NavLink>
-        <NavLink to="/week">Wheather on 5 days</NavLink>
-      </div>
+      <Header />
       <Outlet />
     </>
   );

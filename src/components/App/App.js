@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import TodayWeather from "./components/Pages/TodayWeather";
-import WeekWeather from "./components/Pages/WeekWeather";
-import ErrorPage from "./components/Pages/ErrorPage";
+import Layout from "../Layout";
+import TodayWeather from "../Pages/TodayWeather";
+import WeekWeather from "../Pages/WeekWeather";
+import ErrorPage from "../Pages/ErrorPage";
 import { useState } from "react";
-import "./App.css";
+import { Container } from "./App.styled";
 
 function App() {
   const [place, setPlace] = useState("");
   return (
-    <>
+    <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route
@@ -24,7 +24,7 @@ function App() {
           <Route path="/*" element={<ErrorPage />} />
         </Route>
       </Routes>
-    </>
+    </Container>
   );
 }
 

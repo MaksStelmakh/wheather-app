@@ -13,12 +13,13 @@ export const getTodayWeather = async (city) => {
     );
     return data;
   } catch (error) {
-    return toast.error("Please enter a valid city", {
+    toast.error("Please enter a valid city", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
     });
+    return error.message;
   }
 };
 
@@ -29,11 +30,46 @@ export const getWeekWeather = async (city) => {
     );
     return data;
   } catch (error) {
-    return toast.error("Please enter a valid city", {
+    toast.error("Please enter a valid city", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
     });
+    return error;
+  }
+};
+
+export const getGeolocationWeather = async (lat, lon) => {
+  try {
+    const { data } = await axios.get(
+      `/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${API_KEY}`
+    );
+    return data;
+  } catch (error) {
+    toast.error("Please enter a valid city", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+    });
+    return error;
+  }
+};
+
+export const getGeoWeatherWeek = async (lat, lon) => {
+  try {
+    const { data } = await axios.get(
+      `/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
+    );
+    return data;
+  } catch (error) {
+    toast.error("Please enter a valid city", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+    });
+    return error;
   }
 };
