@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { InputContainer } from "./SearchForm.styled";
 import { ImSearch } from "react-icons/im";
+import PropTypes from "prop-types";
 
 const SearchForm = ({ setPlace }) => {
   const formSchema = Yup.object().shape({
@@ -54,3 +55,7 @@ const SearchForm = ({ setPlace }) => {
 };
 
 export default SearchForm;
+
+SearchForm.protoTypes = {
+  setPlace: PropTypes.func.isRequired,
+};

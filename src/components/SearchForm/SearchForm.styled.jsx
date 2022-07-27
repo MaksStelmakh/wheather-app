@@ -18,7 +18,7 @@ export const InputContainer = styled.div`
     color: var(--color-white);
     padding: 7px 0;
     background: transparent;
-    transition: border-color 0.2s;
+    transition: var(--transition);
 
     &::placeholder {
       color: transparent;
@@ -38,7 +38,7 @@ export const InputContainer = styled.div`
         position: absolute;
         top: 0;
         display: block;
-        transition: 0.2s;
+        transition: var(--transition);
         font-size: 16px;
         color: var(--color-white);
         font-weight: 700;
@@ -53,7 +53,7 @@ export const InputContainer = styled.div`
     position: absolute;
     top: 0;
     display: block;
-    transition: 0.2s;
+    transition: var(--transition);
     font-size: 1rem;
     font-family: var(--font-family);
     color: var(--color-white);

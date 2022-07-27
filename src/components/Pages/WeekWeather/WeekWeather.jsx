@@ -5,6 +5,7 @@ import {
 } from "../../../services/ApiServices";
 import SearchForm from "../../SearchForm";
 import { WeekWeatherContainer, ClearMessage } from "./WeekWeather.styled";
+import PropTypes from "prop-types";
 
 const WeekWeather = ({ place, setPlace }) => {
   const [weekWeather, setWeekWeather] = useState(null);
@@ -80,3 +81,9 @@ const WeekWeather = ({ place, setPlace }) => {
 };
 
 export default WeekWeather;
+
+WeekWeather.protoTypes = {
+  place: PropTypes.string,
+  setPlace: PropTypes.func.isRequired,
+};
+

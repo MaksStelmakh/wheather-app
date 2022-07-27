@@ -9,6 +9,7 @@ import {
   MainInfo,
   ClearMessage,
 } from "./TodayWhrather.styled";
+import PropTypes from "prop-types";
 
 const TodayWeather = ({ place, setPlace }) => {
   const [weather, setWeather] = useState(null);
@@ -74,3 +75,8 @@ const TodayWeather = ({ place, setPlace }) => {
 };
 
 export default TodayWeather;
+
+TodayWeather.protoTypes = {
+  place: PropTypes.string,
+  setPlace: PropTypes.func.isRequired,
+};
